@@ -1,0 +1,21 @@
+graph = defaultdict(list)
+graph[0].append(1)
+graph[0].append(2)
+graph[1].append(2)
+graph[2].append(0)
+graph[2].append(3)
+graph[3].append(3)
+
+s = 2
+visited = [False]*len(graph)
+queue = []
+queue.append(s)
+visited[s] = True
+
+while queue:
+    s = queue.pop(0)
+    print (s, end = " ")
+    for i in graph[s]:
+        if visited[i] == False:
+            queue.append(i)
+            visited[i] = True
